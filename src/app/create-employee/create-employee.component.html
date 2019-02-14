@@ -1,0 +1,65 @@
+
+<div class=" container-fluid">
+  
+        <h3>Create Employee</h3>
+      
+      <div *ngIf="message" class=" alert alert-success">{{message}}</div>
+      <form [formGroup]="FormDetails"  class=" form-group" (ngSubmit)="onSubmit()" >
+
+          <label>
+            
+              <input type="hidden" class=" form-control" formControlName="EmployeeId" >
+            </label><br>
+          
+        
+          <label>
+            First Name
+            <input type="text" class=" form-control" formControlName="FirstName">
+            <div [hidden]="FormDetails.controls.FirstName.valid  || FormDetails.controls.FirstName.pristine  " class="alert alert-danger">
+              <span >Please enter first Name</span>
+            </div>
+          </label><br>
+        
+          <label>
+            Last Name
+            <input type="text" class=" form-control" formControlName="LastName">
+            <div class=" alert alert-danger" [hidden]="FormDetails.controls.LastName.valid || FormDetails.controls.LastName.pristine">
+              <span>Please enter last name</span>
+            </div>
+          </label><br>
+          
+          <label>
+           Email
+            <input type="text" class=" form-control" formControlName="Email">
+            <div [hidden]="FormDetails.controls.Email.valid || FormDetails.controls.Email.pristine" class=" alert alert-danger">
+              <span>Please enter Email</span>
+            </div>
+          </label><br>
+        
+          <label>
+            Mobile No
+            <input type="text" class=" form-control" formControlName="MobileNo">
+            <div [hidden]="FormDetails.controls.Email.valid || FormDetails.controls.Email.pristine" class=" alert alert-danger" class="alert alert-danger">
+              <span>Please enter mobile number</span>
+            </div>
+          </label><br>
+          <label>
+              Role
+              <select id="country" class=" form-control" formControlName="RoleId"  >
+                  <option value="">--select--</option>  
+                <option value="1">Admin</option>
+                  <option value="2">SubAdmin</option>
+                 </select> 
+            </label>
+            <br>
+            <button type="submit"  class="btn btn-primary" [disabled]="!FormDetails.valid" >Submit</button>            
+                   
+          </form>
+          <button type="button"  class="btn btn-primary"  (click)="ValueChange()"  [routerLink]="['/Employee']" >Back
+           
+          </button>
+
+         
+</div>
+
+

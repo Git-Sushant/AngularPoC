@@ -1,0 +1,11 @@
+<!-- <p>
+  blog-post-list works!
+</p> -->
+<p><a (click)="ExpandAll()">Exapand All</a></p>
+<p><a href="" (click)="FavouriteAll()">Favourite All</a></p>
+<app-blog-post-tile *ngFor=' let post of blogpost[currentPage] ' [post]="post" #tile></app-blog-post-tile>
+<!-- <app-blog-post-tile title="Blog Post 2" summary="Blog Summary 2"></app-blog-post-tile>
+<app-blog-post-tile title="Blog Post 3" summary="Blog Summary 3"></app-blog-post-tile>
+<app-blog-post-tile title="Blog Post 4" summary="Blog Summary 4"></app-blog-post-tile> -->
+
+<app-paginator [NumberOfPages]="blogpost.length" (pageNumberClick)="updatePage($event)"></app-paginator>

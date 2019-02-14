@@ -1,0 +1,11 @@
+<!-- <p>
+  blog-post-tile works!
+</p> -->
+<div class="card" [ngClass]="{'fav':post.IsFav}">
+  <div class="card-body">
+    <h1 class="card-title">{{post.title}}</h1>
+    <p class="card-text" (click)="ShowFullSummary()">{{post.summary}}</p>
+    <a  class="btn btn-primary" (click)="toggleFav()">Favourite</a>
+    <a  class="btn btn-outline-primary" (click)="ShowFullSummary()">Read</a>
+  </div>
+</div>

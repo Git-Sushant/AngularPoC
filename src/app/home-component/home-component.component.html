@@ -1,0 +1,16 @@
+
+<button class=" btn btn-outline-primary"  *ngIf='show' (click)=toggle(false) >Add Layout</button>
+
+<!-- <h1 [myHidden]="val">Hidden component</h1> -->
+
+<ng-template [appTemplate]="!show">
+    <body>
+        <header id="pageHeader" appVisibility >
+            <button appVisibility class="btn btn-danger" >Remove</button> 
+            Header</header>
+        <article id="mainArticle" appVisibility>Article</article>
+        <nav id="mainNav" appVisibility>Nav</nav>
+        <div id="siteAds" appVisibility>Ads</div>
+        <footer id="pageFooter" appVisibility>Footer</footer>
+      </body>
+</ng-template> 
